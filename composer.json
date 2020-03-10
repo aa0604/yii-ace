@@ -14,8 +14,10 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-redis": "*",
 
-        "xing.chen/upload": "*",
-        "xing.chen/yii2-ueditor": "*"
+    },
+    "require-dev": {
+        "xing.chen/upload": "~dev-master",
+        "xing.chen/yii2-ueditor": "~dev-master"
     },
     "autoload": {
         "psr-4": {
