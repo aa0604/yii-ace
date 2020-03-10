@@ -7,22 +7,22 @@
 // | TITLE: 用户管理
 // +----------------------------------------------------------------------
 
-namespace apps\backend\modules\admin\controllers;
+namespace xing\ace\controllers;
 
-use common\models\admin\AdminUserSearch;
+use xing\ace\models\AdminUserSearch;
 use Yii;
-use common\models\admin\AdminUser;
+use xing\ace\models\AdminUser;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
-use common\models\admin\AdminRole;
+use xing\ace\models\AdminRole;
 
 /**
  * Class AdminUserController
  * @package backend\controllers
  */
-class AdminUserController extends \apps\backend\controllers\BaseController
+class AdminUserController extends BaseController
 {
     /**
      * Lists all LoveQuestionnaireSys models.

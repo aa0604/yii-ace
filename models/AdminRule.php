@@ -7,7 +7,7 @@
 // | TITLE: 路由
 // +----------------------------------------------------------------------
 
-namespace common\models\admin;
+namespace xing\ace\models;
 
 
 use apps\backend\helps\Tree;

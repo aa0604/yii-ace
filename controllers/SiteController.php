@@ -1,23 +1,23 @@
 <?php
-namespace apps\backend\controllers;
+namespace xing\ace\controllers;
 
-use common\models\admin\ChangeForm;
-use common\models\admin\AdminUser;
+use xing\ace\models\ChangeForm;
+use xing\ace\models\AdminUser;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\admin\LoginForm;
-use common\models\admin\PasswordResetRequestForm;
-use common\models\admin\ResetPasswordForm;
-use common\models\admin\SignupForm;
+use xing\ace\models\LoginForm;
+use xing\ace\models\PasswordResetRequestForm;
+use xing\ace\models\ResetPasswordForm;
+use xing\ace\models\SignupForm;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc

@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 
 
-namespace common\models\admin;
+namespace xing\ace\models;
 
 use Yii;
 use yii\base\NotSupportedException;

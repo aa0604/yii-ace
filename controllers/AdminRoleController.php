@@ -7,15 +7,15 @@
 // | TITLE: 角色
 // +----------------------------------------------------------------------
 
-namespace apps\backend\modules\admin\controllers;
+namespace xing\ace\controllers;
 
-use apps\backend\helps\Tree;
-use common\models\admin\AdminRule;
+use xing\ace\helper\Tree;
+use xing\ace\models\AdminRule;
 use Yii;
-use common\models\admin\AdminRole;
+use xing\ace\models\AdminRole;
 use yii\web\Response;
 
-class AdminRoleController extends \apps\backend\controllers\BaseController
+class AdminRoleController extends BaseController
 {
 
 

@@ -1,5 +1,5 @@
 <?php
-namespace common\models\admin;
+namespace xing\ace\models;
 
 use Yii;
 

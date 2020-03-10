@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 
 
-namespace common\models\admin;
+namespace xing\ace\models;
 
 
 class AdminRole extends \common\models\BaseActiveModel

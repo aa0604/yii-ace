@@ -1,14 +1,14 @@
 <?php
 
-namespace common\models\admin;
+namespace xing\ace\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\admin\AdminUser;
+use xing\ace\models\AdminUser;
 
 /**
- * AdminUserSearch represents the model behind the search form of `common\models\admin\AdminUser`.
+ * AdminUserSearch represents the model behind the search form of `xing\ace\models\AdminUser`.
  */
 class AdminUserSearch extends AdminUser
 {

@@ -1,11 +1,10 @@
 <?php
 
-namespace apps\backend\modules\admin\controllers;
+namespace xing\ace\controllers;
 
 use Yii;
-use common\models\admin\AdminRule;
-use common\models\admin\AdminRuleSearch;
-use apps\backend\controllers\BaseController;
+use xing\ace\models\AdminRule;
+use xing\ace\models\AdminRuleSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 

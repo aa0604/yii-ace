@@ -73,9 +73,9 @@ return [
     // Show other information
     'project_open_other' => false,
                
-    'projectName'       => 'Yii2 后台管理系统',              
-    'projectTitle'      => 'Yii2 后台管理系统',
-    'companyName'       => '<span class="blue bolder"> Liujinxing </span> Yii2 Admin 项目 &copy; 2016-2018',  
+    'projectName'       => '后台管理系统',              
+    'projectTitle'      => '后台管理系统',
+    'companyName'       => 'xxx 版本所有',  
 ];
 ```
 
