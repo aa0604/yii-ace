@@ -16,9 +16,9 @@
 
     },
     "require-dev": {
-        "xing.chen/helper": "~dev-master",
-        "xing.chen/upload": "~dev-master",
-        "xing.chen/yii2-ueditor": "~dev-master"
+        "xing.chen/helper": "dev-master",
+        "xing.chen/upload": "dev-master",
+        "xing.chen/yii2-ueditor": "dev-master"
     },
     "autoload": {
         "psr-4": {
