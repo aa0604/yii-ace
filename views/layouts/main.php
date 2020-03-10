@@ -1,6 +1,6 @@
 <?php
 
-use jinxing\admin\AdminAsset;
+use xing\ace\AdminAsset;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 

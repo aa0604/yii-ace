@@ -2,9 +2,9 @@
 
 use yii\helpers\Url;
 use yii\helpers\Json;
-use jinxing\admin\models\Auth;
-use jinxing\admin\widgets\MeTable;
-use jinxing\admin\helpers\Helper;
+use xing\ace\models\Auth;
+use xing\ace\widgets\MeTable;
+use xing\ace\helpers\Helper;
 
 $array_module = Helper::getModuleIds(Yii::$app->controller->module);
 array_push($array_module, Yii::$app->controller->id);

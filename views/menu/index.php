@@ -2,8 +2,8 @@
 
 use yii\helpers\Json;
 use yii\helpers\ArrayHelper;
-use jinxing\admin\models\Auth;
-use jinxing\admin\widgets\MeTable;
+use xing\ace\models\Auth;
+use xing\ace\widgets\MeTable;
 
 $array_default_auth = (new Auth())->array_default_auth;
 $auth               = Auth::getDataTableAuth(Yii::$app->controller->module->user);

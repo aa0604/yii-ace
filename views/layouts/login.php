@@ -6,7 +6,7 @@
  */
 
 use \yii\helpers\ArrayHelper;
-use jinxing\admin\AppAsset;
+use xing\ace\AppAsset;
 
 list(, $url) = Yii::$app->assetManager->publish((new AppAsset())->sourcePath);
 ?>

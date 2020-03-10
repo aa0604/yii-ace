@@ -1,6 +1,6 @@
 <?php
 
-namespace jinxing\admin;
+namespace xing\ace;
 
 use Yii;
 

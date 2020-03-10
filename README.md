@@ -12,7 +12,7 @@ Once the extension is installed, simply modify your application configuration as
 return [
     'modules' => [
         'admin' => [
-            'class' => 'jinxing\admin\Module',
+            'class' => 'xing\ace\admin\Module',
             
             // Make use of that kind of user
             'user' => 'admin',
@@ -34,7 +34,7 @@ return [
         // Background user
         'admin' => [
             'class' => '\yii\web\User',
-            'identityClass' => 'jinxing\admin\models\Admin',
+            'identityClass' => 'xing\ace\models\Admin',
             'enableAutoLogin' => true,
             'loginUrl' => ['/admin/default/login'],
             'idParam' => '_adminId',
@@ -86,7 +86,7 @@ return [
     'components' => [
         'modules' => [
             'admin' => [
-                'class' => 'jinxing\admin\Module',
+                'class' => 'xing\ace\Module',
                 
                 // Make use of that kind of user
                 'user' => 'admin'

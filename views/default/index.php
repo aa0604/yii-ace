@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
-use jinxing\admin\AppAsset;
-use jinxing\admin\widgets\Nav;
-use jinxing\admin\helpers\Helper;
+use xing\ace\AppAsset;
+use xing\ace\widgets\Nav;
+use xing\ace\helpers\Helper;
 
 AppAsset::register($this);
 list(, $url) = Yii::$app->assetManager->publish((new AppAsset())->sourcePath);

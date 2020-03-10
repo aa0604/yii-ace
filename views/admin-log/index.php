@@ -1,9 +1,9 @@
 <?php
 
 use yii\helpers\Json;
-use jinxing\admin\models\AdminLog;
-use jinxing\admin\models\Auth;
-use jinxing\admin\widgets\MeTable;
+use xing\ace\models\AdminLog;
+use xing\ace\models\Auth;
+use xing\ace\widgets\MeTable;
 
 // 获取权限
 $auth = Auth::getDataTableAuth(Yii::$app->controller->module->user);

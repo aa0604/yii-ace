@@ -1,12 +1,12 @@
 <?php
 
 use yii\helpers\ArrayHelper;
-use jinxing\admin\AdminAsset;
+use xing\ace\AdminAsset;
 
 $this->title = '管理员个人信息';
 
 list(, $url) = list(, $url) = Yii::$app->assetManager->publish((new AdminAsset())->sourcePath);
-$depends = ['depends' => 'jinxing\admin\AdminAsset'];
+$depends = ['depends' => 'xing\ace\AdminAsset'];
 
 $this->registerCssFile($url . '/css/bootstrap-editable.css', $depends);
 $this->registerCssFile($url . '/css/jquery-ui.custom.min.css', $depends);
