@@ -1,6 +1,6 @@
 # 安装
 ```
-composer require jinxing/yii2-admin
+composer require xing/yii-ace dev-master
 ```
 
 配置
