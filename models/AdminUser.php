@@ -16,7 +16,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\web\IdentityInterface;
 
 
-class AdminUser extends \common\models\BaseActiveModel implements IdentityInterface
+class AdminUser extends BaseActiveModel implements IdentityInterface
 {
 
     const SCENARIO_CREATE = 'create';

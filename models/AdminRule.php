@@ -10,10 +10,27 @@
 namespace xing\ace\models;
 
 
-use apps\backend\helps\Tree;
+use xing\ace\helper\Tree;
 use yii\helpers\ArrayHelper;
 
-class AdminRule extends \common\models\BaseActiveModel
+
+/**
+ * This is the model class for table "admin_rule".
+ *
+ * @property int $id 主键
+ * @property int|null $pid 上级id
+ * @property string|null $route 路由
+ * @property string|null $title 名称
+ * @property string|null $icon 图标
+ * @property int|null $type 类型
+ * @property string|null $condition 描述
+ * @property int|null $order 排序
+ * @property string|null $tips 提示
+ * @property int|null $is_show 是否显示
+ * @property int|null $status 状态
+ */
+
+class AdminRule extends BaseActiveModel
 {
 
     const SCENARIO_CREATE = 'create';
@@ -129,4 +146,12 @@ class AdminRule extends \common\models\BaseActiveModel
 
     }
 
+    
+    public static function readList($parentId) 
+    {
+        return self::find()
+            ->filterWhere(['pid' => $parentId, 'status' => 1, 'is_show' => 1])
+            ->orderBy('order desc')
+            ->all();
+    }
 }

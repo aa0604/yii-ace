@@ -105,7 +105,6 @@ list(, $url) = Yii::$app->assetManager->publish((new AdminAsset())->sourcePath);
 <script src="<?=$url?>/js/excanvas.min.js"></script>
 <![endif]-->
 <?php $this->endBody() ?>
-<?=$this->blocks['javascript']?>
 </body>
 </html>
 <?php $this->endPage() ?>

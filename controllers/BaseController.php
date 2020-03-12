@@ -4,7 +4,7 @@
 namespace xing\ace\controllers;
 
 
-class BaseController
+class BaseController extends \yii\web\Controller
 {
 
 }

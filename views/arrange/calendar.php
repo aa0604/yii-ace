@@ -72,7 +72,7 @@ $this->registerJsFile($url . '/js/validate.message.js', $depends);
                     <form method="post" id="editForm" class="form-horizontal" name="editForm" action="update">
                         <input type="hidden" name="actionType" value="insert"/>
                         <input type="hidden" name="id" value=""/>
-                        <input type="hidden" name="admin_id" value="<?= \Yii::$app->controller->module->getUserId() ?>"/>
+                        <input type="hidden" name="admin_id" value="<?= \Yii::$app->user->identity->getId() ?>"/>
                         <fieldset>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="input-title"> 事件标题 </label>

@@ -17,7 +17,7 @@ list(, $url) = Yii::$app->assetManager->publish((new AppAsset())->sourcePath);
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="description" content="overview &amp; stats"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-    <title><?= ArrayHelper::getValue(Yii::$app->params, 'projectTitle', 'Yii2 Admin') ?></title>
+    <title><?= ArrayHelper::getValue(Yii::$app->params, 'projectTitle', 'Admin') ?></title>
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="<?=$url?>/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?=$url?>/css/font-awesome.min.css"/>
@@ -67,7 +67,7 @@ list(, $url) = Yii::$app->assetManager->publish((new AppAsset())->sourcePath);
                 <div class="login-container">
                     <div class="center">
                         <h1>
-                            <span class="red"><?= ArrayHelper::getValue(Yii::$app->params, 'projectName', 'Yii2 Admin') ?></span>
+                            <span class="red"><?= ArrayHelper::getValue(Yii::$app->params, 'projectName', 'Admin') ?></span>
                         </h1>
                     </div>
 

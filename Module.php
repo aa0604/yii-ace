@@ -27,7 +27,7 @@ class Module extends \yii\base\Module
     /**
      * @var array 不验证的控制器名称
      */
-    public $allowControllers = ['default'];
+    public $allowControllers = ['site'];
 
     /**
      * @var bool 权限验证
@@ -35,44 +35,15 @@ class Module extends \yii\base\Module
     public $verifyAuthority = true;
 
     /**
-     * @var string 默认首页action
-     */
-    public $defaultAction = 'default/system';
-
-    /**
      * @var bool 左边头部按钮
      */
     public $leftTopButtons = [
-        [
-            'id'        => '',
-            'url'       => '',
-            'title'     => '',
-            'icon'      => 'fa fa-pencil',
-            'btn-class' => 'btn-info'
-        ],
-        [
-            'id'        => 'my-info',
-            'url'       => 'admin/view',
-            'title'     => '个人信息',
-            'icon'      => 'glyphicon glyphicon-user',
-            'btn-class' => 'btn-warning'
-        ],
-        [
-            'id'        => 'index',
-            'url'       => 'default/system',
-            'title'     => '登录信息',
-            'icon'      => 'fa fa-cogs',
-            'btn-class' => 'btn-danger'
-        ]
     ];
 
     /**
      * @var array 用户点击相关按钮
      */
     public $userLinks = [
-        ['title' => '登录信息', 'id' => 'index', 'url' => 'default/system', 'icon' => 'fa fa-desktop'],
-        ['title' => '个人信息', 'id' => 'my-info', 'url' => 'admin/view', 'icon' => 'fa fa-user'],
-        ['title' => '我的日程', 'id' => 'my-arrange', 'url' => 'arrange/calendar', 'icon' => 'fa fa-calendar']
     ];
 
     /**
@@ -96,12 +67,12 @@ class Module extends \yii\base\Module
         ];
 
         // 设置错误处理页面
-        Yii::$app->errorHandler->errorAction = $this->getUniqueId() . '/default/error';
+        Yii::$app->errorHandler->errorAction = $this->getUniqueId() . '/site/error';
         if (!isset(Yii::$app->i18n->translations['admin'])) {
             Yii::$app->i18n->translations['admin'] = [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en',
-                'basePath'       => '@xing/ace/admin/messages'
+                'basePath'       => '@xing/ace/messages'
             ];
         }
     }
@@ -121,8 +92,8 @@ class Module extends \yii\base\Module
         }
 
         // 验证用户登录
-        if (Yii::$app->get($this->user)->isGuest) {
-            return Yii::$app->response->redirect(Url::toRoute('default/login'));
+        if (Yii::$app->user->getIsGuest()) {
+            return Yii::$app->response->redirect(Url::toRoute('admin/site/login'));
         }
 
         // 验证权
@@ -147,27 +118,7 @@ class Module extends \yii\base\Module
      */
     public function getUser()
     {
-        return Yii::$app->get($this->user);
+        return Yii::$app->user->identity;
     }
 
-    /**
-     * 获取登录用户ID
-     *
-     * @return mixed
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function getUserId()
-    {
-        return $this->getUser()->id;
-    }
-
-    /**
-     * @return null|object
-     *
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function getAdmin()
-    {
-        return $this->getUser();
-    }
 }

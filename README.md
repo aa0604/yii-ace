@@ -1,6 +1,6 @@
 # 安装
 ```
-composer require xing/yii-ace dev-master
+composer require xing/yii-ace
 ```
 
 配置
@@ -12,7 +12,7 @@ Once the extension is installed, simply modify your application configuration as
 return [
     'modules' => [
         'admin' => [
-            'class' => 'xing\ace\admin\Module',
+            'class' => 'xing\ace\Module',
             
             // Make use of that kind of user
             'user' => 'admin',
@@ -47,7 +47,7 @@ return [
                 'admin' => [
                     'class'          => 'yii\i18n\PhpMessageSource',
                     'sourceLanguage' => 'en',
-                    'basePath'       => '@jinxing/admin/messages'
+                    'basePath'       => '@xing/ace/messages'
                 ],
             ],
         ],
@@ -103,21 +103,13 @@ return [
 ]
 ```
 
-## Import permission information table structure
+## 打开命令行执行下面的命令导入数据
 ```
-php yii migrate --migrationPath=@yii/rbac/migrations
-```
-
-## Importing data information such as table structure and permission configuration required in the background
-```
-php yii migrate --migrationPath=@jinxing/admin/migrations
+php yii migrate --migrationPath=@xing/ace/migrations
 ```
 
-### Now you can preview your background
-### Default super administrator: super
-### Default super administrator password: admin123
-> Default administrator: admin 
-Default administrator password: admin888
+> 默认用户名: admin 
+密码: chenxing
 ```
 // Login address
 http://localhost/path/to?index.php?r=admin/default/login

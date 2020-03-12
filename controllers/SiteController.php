@@ -1,10 +1,16 @@
 <?php
 namespace xing\ace\controllers;
 
+use xing\ace\models\Menu;
+use xing\ace\helper\Tree;
+use xing\ace\logic\AdminRuleLogic;
+use xing\ace\models\AdminRole;
+use xing\ace\models\AdminRule;
 use xing\ace\models\ChangeForm;
 use xing\ace\models\AdminUser;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -19,6 +25,7 @@ use xing\ace\models\SignupForm;
  */
 class SiteController extends BaseController
 {
+    public $layout = false;
     /**
      * @inheritdoc
      */
@@ -27,17 +34,24 @@ class SiteController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'change-pass', 'logout'],
+                'user'  => ArrayHelper::getValue($this->module, 'user'),
                 'rules' => [
                     [
-                        'actions' => ['index', 'change-pass', 'logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
+                        'actions' => ['login', 'error'],
+                        'allow'   => true,
+                    ],
+                    [
+                        'actions' => [
+                            'logout', 'index', 'system',
+                            'update', 'create', 'switch-login',
+                        ],
+                        'allow'   => true,
+                        'roles'   => ['@'],
                     ],
                 ],
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
+            'verbs'  => [
+                'class'   => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -68,10 +82,26 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-        $user = '';
-        return $this->render('index',['']);
+//        $this->layout = false;
+        $menu = AdminRuleLogic::getNav(Yii::$app->user->identity->role_id);
+//        $menu = AdminRole::buildNav($menu);
+        return $this->render('index',['menu' => $menu]);
     }
 
+    /**
+     * 显示首页系统信息
+     *
+     * @return string
+     */
+    public function actionSystem()
+    {
+        // 获取用户信息
+        return $this->render('system', [
+            'yii'    => Yii::getVersion(),                         // Yii 版本
+            'upload' => ini_get('upload_max_filesize'),             // 上传文件大小,
+            'user'   => Yii::$app->user->identity,
+        ]);
+    }
     /**
      * Logs in a user.
      *
@@ -82,6 +112,7 @@ class SiteController extends BaseController
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+        $this->layout = 'login';
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {

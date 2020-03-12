@@ -11,7 +11,9 @@
 namespace xing\ace\models;
 
 
-class AdminRole extends \common\models\BaseActiveModel
+use yii\helpers\Url;
+
+class AdminRole extends BaseActiveModel
 {
     const SCENARIO_CREATE = 'create';
     const SCENARIO_UPDATE = 'update';
@@ -132,4 +134,58 @@ class AdminRole extends \common\models\BaseActiveModel
     }
 
 
+    /**
+     * 生成
+     * @param $data
+     * @param string $html
+     * @return string
+     */
+    public static function buildMenuHtml($data, $html = '')
+    {
+        if (empty($data)){
+            return "";
+        }
+        foreach ($data as $k => $v) {
+            if (isset($v['type']) && $v['type'] != 2 && $v['status'] == 1) {
+
+                $html .= '<li >';
+                //需要验证是否有子菜单
+                if (isset($v['children']) && is_array($v['children'])) {
+                    $html .= '<a href="javascript::(0)" class="dropdown-toggle">';
+                } else {
+                    $html .= '<a href="javascript:openapp(\' ' . Url::toRoute($v['route']) . '\',\'' . $v['id'] . '\',\'' . $v['title'] . '\',true);" class="">';
+                }
+                //图标
+                $html .= '<i class="menu-icon ' . $v['icon'] . '"></i>';
+                //名称
+                $html .= '   <span class="menu-text">' . $v['title'] . '</span>';
+
+                if (isset($v['children']) && is_array($v['children'])) {
+                    $html .= '<b class="arrow fa fa-angle-down"></b></a>';
+                } else {
+                    $html .= '<b class="arrow fa s"></b></a>';
+                }
+
+                //需要验证是否有子菜单
+                if (isset($v['children']) && is_array($v['children'])) {
+                    $html .= ' <b class="arrow"></b>';
+                    $html .= '<ul class="submenu nav-hide" style="display: none;">';
+                    $html .= self::buildMenuHtml($v['children']);
+                    //验证是否有子订单
+                    $html .= '</ul>';
+                }
+                $html .= '</li>';
+            }
+        }
+        return $html;
+
+    }
+
+    public static function buildNav($list)
+    {
+        er($list);
+        foreach ($list as $v) {
+
+        }
+    }
 }
