@@ -133,7 +133,7 @@ class AdminRule extends BaseActiveModel
     {
         return [
             ['pid', 'default', 'value' => '0'],
-            ['route', 'required', 'message' => '路由必须'],
+            ['route', 'string', 'max' => 80],
             ['title', 'required', 'message' => '名称必须'],
             [['icon'], 'string', 'max' => 255],
             [['order'], 'string', 'max' => 11],
