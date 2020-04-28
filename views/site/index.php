@@ -316,11 +316,6 @@ $user = Yii::$app->user->identity;
                         <i class="ace-icon fa fa-refresh  bigger-110 icon-only"></i>
                     </a>
                 </span>
-                <span class="input-icon" style="font-size: 20px;">
-                    <a id="window-back" href="#">
-                        <i class="ace-icon fa fa-long-arrow-left  bigger-110 icon-only"></i>
-                    </a>
-                </span>
             </div>
         </div>
 
@@ -426,13 +421,6 @@ $user = Yii::$app->user->identity;
             var objActive = $("#page-content iframe.active").get(0);
             if (objActive) {
                 objActive.contentWindow.location.reload()
-            }
-        });
-        $("#window-back").click(function (evt) {
-            evt.preventDefault();
-            var objActive = $("#page-content iframe.active").get(0);
-            if (objActive) {
-                objActive.contentWindow.history.back(-1)
             }
         });
         $(document).on("click", "#me-window span", function () {
