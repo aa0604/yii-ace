@@ -12,17 +12,12 @@ class AppAsset extends AssetBundle
     /**
      * @var string 定义使用的目录路径
      */
-    public $basePath = '@xing/ace/assets/';
-
-    /**
-     * @var string 定义使用的地址url
-     */
-    // public $baseUrl  = '@xing/ace/assets/';
+    public $basePath = '@xing/yii-ace/assets/';
 
     /**
      * @var string 定义使用的目录路径
      */
-    public $sourcePath = '@xing/ace/assets';
+    public $sourcePath = '@xing/yii-ace/assets';
 
     /**
      * @var array 加载的公共css
