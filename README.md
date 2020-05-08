@@ -105,7 +105,7 @@ return [
 
 ## 打开命令行执行下面的命令导入数据
 ```
-php yii migrate --migrationPath=@xing/ace/migrations
+php yii migrate --migrationPath=@xing/yii-ace/migrations
 ```
 
 > 默认用户名: admin 
