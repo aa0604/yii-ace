@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "xing\\ace\\": ""
+            "xing\\yii-ace\\": "xing\\article"
         }
     }
 }
