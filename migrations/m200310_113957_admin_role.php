@@ -60,7 +60,7 @@ class m200310_113957_admin_role extends Migration
     public function safeDown()
     {
         echo "m200310_113957_admin_role cannot be reverted.\n";
-
+        $this->dropTable($this->table);
         return false;
     }
 

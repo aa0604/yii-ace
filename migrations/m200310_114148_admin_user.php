@@ -57,7 +57,7 @@ class m200310_114148_admin_user extends Migration
     public function safeDown()
     {
         echo "m200310_114148_admin_user cannot be reverted.\n";
-
+        $this->dropTable($this->table);
         return false;
     }
 
