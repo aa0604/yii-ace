@@ -44,7 +44,7 @@ class m200310_114058_admin_rule extends Migration
         $this->insert($this->table, [
             'pid'       => 0,
             'title'     => '系统管理',
-            'route'     => 'admin/admin',
+            'route'     => '',
             'icon'      => 'glyphicon glyphicon-cog blue ',
             'condition' => '权限列表',
             'type'      => 1,
@@ -65,7 +65,7 @@ class m200310_114058_admin_rule extends Migration
         $this->insert($this->table, [
             'pid'       => 1,
             'title'     => '管理员列表',
-            'route'     => 'aadmin/admin-user/index',
+            'route'     => 'admin/admin-user/index',
             'icon'      => 'glyphicon glyphicon-user ',
             'type'      => 1,
             'is_show'   => 1,
