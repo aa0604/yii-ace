@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "xing\\ace\\": "xing.chen/yii-ace/"
+            "xing\\ace\\": "vendor/xing.chen/yii-ace/"
         }
     }
 }
