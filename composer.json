@@ -2,6 +2,7 @@
     "name": "xing.chen/yii-ace",
     "description": "ace admin",
     "keywords": ["yii2","extension"],
+    "type": "yii2-extension",
     "license": "MIT",
     "authors": [
         {
