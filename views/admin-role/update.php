@@ -8,25 +8,16 @@
 // +----------------------------------------------------------------------
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use xing\ace\AdminAsset;
+\xing\ace\AdminRoleAsset::register($this);
+list(, $url) = Yii::$app->assetManager->publish((new AdminAsset())->sourcePath);
+
+$this->registerJsFile($url . '/js/jquery.nestable.min.js', [
+    'depends' => 'xing\ace\AdminAsset'
+]);
 ?>
 
 <?php $this->beginBlock('head'); ?>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/jquery-ui.custom.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/chosen.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/datepicker.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/bootstrap-timepicker.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/daterangepicker.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/bootstrap-datetimepicker.css"/>
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/colorpicker.css"/>
-
-    <!-- text fonts -->
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/ace-fonts.css"/>
-    <!-- ace styles -->
-    <link rel="stylesheet" href="<?= Url::base() ?>/aceAdmin/assets/css/ace.css" class="ace-main-stylesheet"
-          id="main-ace-style"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="<?=Url::base()?>/aceAdmin/assets/css/ace-part2.css" class="ace-main-stylesheet"/>
-    <![endif]-->
 
 <?php $this->endBlock(); ?>
     <!--===========================================-->
@@ -128,8 +119,6 @@ use yii\widgets\ActiveForm;
 
 
 <!--载入树插件-->
-<link rel="stylesheet" href="<?= Url::base() ?>/js/zTree_v3-master/css/demo.css" type="text/css">
-<link rel="stylesheet" href="<?= Url::base() ?>/js/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
 <script>
 
     var zNodes = <?= $ruleAll ?>;

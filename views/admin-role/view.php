@@ -6,7 +6,7 @@ use xing\ace\widgets\Nestable;
 use xing\ace\AdminAsset;
 
 $this->title = '角色信息详情';
-list(, $url) = list(, $url) = Yii::$app->assetManager->publish((new AdminAsset())->sourcePath);
+list(, $url) = Yii::$app->assetManager->publish((new AdminAsset())->sourcePath);
 $this->registerJsFile($url . '/js/jquery.nestable.min.js', [
     'depends' => 'xing\ace\AdminAsset'
 ]);
