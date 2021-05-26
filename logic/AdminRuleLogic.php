@@ -17,9 +17,8 @@ class AdminRuleLogic
         $AdminRule = AdminRule::find();
         $AdminRule->where(['pid' => 0, 'status' => 1, 'is_show' => 1, 'type' => [1, 3]])->orderBy('order Asc');
         if (AdminRole::ADMIN_ID != $roleId) {
-            $ruleAll = AdminRole::find()->select('rule')->andWhere(['in','id',explode(',',$roleId)])->createCommand()->queryAll();
-            $rule = array_column($ruleAll,'rule');
-            $AdminRule->andWhere(['in', 'id', $rule]);
+            $rule = AdminRole::findOne($roleId);
+            $AdminRule->andWhere(['id' => explode(',', $rule->rule)]);
         }
         $list = $AdminRule->all();
 
