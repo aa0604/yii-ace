@@ -45,7 +45,7 @@ class AdminUser extends BaseActiveModel implements IdentityInterface
             ['updated_at', 'default', 'value' => self::getDate()],
             ['email', 'email', 'message' => '请填写正确邮箱格式'],
             ['mobile', 'string', 'max' => 15],
-            ['mobile', 'match','pattern'=>'/^1[3|4|5|7|8|][0-9]{9}$/','message'=>'{attribute}不是正确的手机号'],
+            ['mobile', 'match','pattern'=>'/^1[0-9]{10}$/','message'=>'{attribute}不是正确的手机号'],
             ['username', 'string', 'max' => 10, 'min' => 2],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
         ];
